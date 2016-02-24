@@ -16,12 +16,12 @@ Press `F1` and select the command with title: `Shell: Run command`.
 
 This will open a new input box where you will just have to type youd shell command and press `Enter`.
 
-## Terminate Running Command
+### Terminate Running Command
 Press `F1` and select the command with title: `Shell: Terminate Running command`.
 
 The extension will then try to properly kill the running command with a `SIGTERM`.
 
-## Show Command Log
+### Show Command Log
 If you want to see the output of the command, press `F1` and select the command with title: `Shell: Show Command Log`.
 
 This will open the regular output panel on the correct stream.

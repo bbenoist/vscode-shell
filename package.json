@@ -58,5 +58,16 @@
   "dependencies": {
     "spawn-command": "0.0.2-1",
     "tree-kill": "^1.0.0"
-  }
+  },
+  "quickTips": [
+    { "tip": "Quickly execute shell commands by pressing F1 and entering `Shell: Run Command`",
+      "url": "https://marketplace.visualstudio.com/items?itemName=bbenoist.shell#run-command" },
+    { "tip": "Print the shell command output by pressing F1 and entering `Shell: Show Command Log`",
+      "url": "https://marketplace.visualstudio.com/items?itemName=bbenoist.shell#show-command-log" },
+    { "tip": "Terminate running shell command by pressing F1 and entering `Shell: Terminate Running Command`",
+      "url": "https://marketplace.visualstudio.com/items?itemName=bbenoist.shell#terminate-running-command" },
+    { "tip": "With the bbenoist.shell extension, you can run any executable available in the PATH environment variable" },
+    { "tip": "With the bbenoist.shell extension, you can chain shell commands with &&" },
+    { "tip": "Ignore erroneous shell commands by adding `;exit 0` to them" }
+  ]
 }

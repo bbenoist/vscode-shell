@@ -1,0 +1,63 @@
+{
+  "name": "shell",
+  "displayName": "Shell",
+  "description": "Execute shell commands from VS Code",
+  "version": "0.1.0",
+  "publisher": "bbenoist",
+  "engines": {
+    "vscode": "^0.10.6"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "images/icon.png",
+  "license": "MIT",
+  "bugs": { "url": "https://github.com/bbenoist/vscode-shell/issues" },
+  "homepage": "https://github.com/bbenoist/vscode-shell/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bbenoist/vscode-shell.git"
+  },
+  "galleryBanner": {
+    "color": "#00355B",
+    "theme": "dark"
+  },
+  "activationEvents": [
+    "onCommand:extension.shellCMD",
+    "onCommand:extension.shellTerm",
+    "onCommand:extension.shellLog"
+  ],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.shellCMD",
+        "title": "Run Command",
+        "category": "Shell"
+      },
+      {
+        "command": "extension.shellTerm",
+        "title": "Terminate Running Command",
+        "category": "Shell"
+      },
+      {
+        "command": "extension.shellLog",
+        "title": "Show Command Log",
+        "category": "Shell"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install"
+  },
+  "devDependencies": {
+    "typescript": "^1.7.5",
+    "vscode": "^0.11.0"
+  },
+  "dependencies": {
+    "spawn-command": "0.0.2-1",
+    "tree-kill": "^1.0.0"
+  }
+}

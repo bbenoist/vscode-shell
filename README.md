@@ -27,7 +27,7 @@ If you want to see the output of the command, press `F1` and select the command 
 This will open the regular output panel on the correct stream.
 
 ## Installation
-Hit `Ctrl+P` and enter the `ext install shell` command.
+Hit `Ctrl+P` and enter the `ext install shell` command. **Warning:** be sure to select the extension authored from **bbenoist**.
 
 ## Issues / Feature requests
 You can submit your issues and feature requests on the GitHub [issues page][issues].

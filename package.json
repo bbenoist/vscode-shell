@@ -19,8 +19,7 @@
     "url": "https://github.com/bbenoist/vscode-shell.git"
   },
   "galleryBanner": {
-    "color": "#00355B",
-    "theme": "dark"
+    "theme": "light"
   },
   "activationEvents": [
     "onCommand:extension.shellCMD",

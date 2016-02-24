@@ -10,7 +10,11 @@ var commandOutput = null;
 
 function run(cmd:string) {
   return new Promise((accept, reject) => {
-    process = spawnCMD(cmd);
+    var opts : any = {};
+    if (vscode.workspace) {
+      opts.cwd = vscode.workspace.rootPath;
+    }
+    process = spawnCMD(cmd, opts);
     function printOutput(data) { commandOutput.append(data.toString()); }
     process.stdout.on('data', printOutput);
     process.stderr.on('data', printOutput);

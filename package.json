@@ -2,7 +2,7 @@
   "name": "shell",
   "displayName": "Shell",
   "description": "Execute shell commands from VS Code",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "bbenoist",
   "engines": {
     "vscode": "^0.10.6"

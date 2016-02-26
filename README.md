@@ -36,7 +36,7 @@ You can submit your issues and feature requests on the GitHub [issues page][issu
 
 See [`CONTRIBUTING.md`][contributing-md] for guidelines.
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)][license] [![Dependency Status](https://david-dm.org/bbenoist/vscode-quicktips.svg)][npm-dependencies] [![devDependency Status](https://david-dm.org/bbenoist/vscode-quicktips/dev-status.svg)][npm-devdependencies]
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)][license] [![Dependency Status](https://david-dm.org/bbenoist/vscode-shell.svg)][npm-dependencies] [![devDependency Status](https://david-dm.org/bbenoist/vscode-shell/dev-status.svg)][npm-devdependencies]
 
 ## More information
 * [Shell on the Visual Studio Marketplace][marketplace]

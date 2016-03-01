@@ -44,6 +44,12 @@
         "title": "Show Command Log",
         "category": "Shell"
       }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.shellCMD",
+        "key": "Ctrl+R"
+      }
     ]
   },
   "scripts": {

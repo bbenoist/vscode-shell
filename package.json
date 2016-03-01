@@ -23,6 +23,7 @@
   },
   "activationEvents": [
     "onCommand:extension.shellCMD",
+    "onCommand:extension.cwdShellCMD",
     "onCommand:extension.shellTerm",
     "onCommand:extension.shellLog"
   ],
@@ -32,6 +33,11 @@
       {
         "command": "extension.shellCMD",
         "title": "Run Command",
+        "category": "Shell"
+      },
+      {
+        "command": "extension.cwdShellCMD",
+        "title": "Run Command at Active File Location",
         "category": "Shell"
       },
       {
@@ -49,6 +55,10 @@
       {
         "command": "extension.shellCMD",
         "key": "Ctrl+R"
+      },
+      {
+        "command": "extension.cwdShellCMD",
+        "key": "Ctrl+Shift+R"
       }
     ]
   },

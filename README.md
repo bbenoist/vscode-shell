@@ -12,7 +12,12 @@ It helps you getting more productive by not having to leave the editor for runni
 
 ## Usage
 ### Run Command
-Press `F1` and select the command with title: `Shell: Run command`.
+Press `F1` and select the command with title: `Shell: Run Command`.
+
+This will open a new input box where you will just have to type youd shell command and press `Enter`.
+
+### Run Command at the Location of the Active File
+Press `F1` and select the command with title: `Shell: Run Command at Active File Location`.
 
 This will open a new input box where you will just have to type youd shell command and press `Enter`.
 

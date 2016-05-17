@@ -5,7 +5,7 @@
   "version": "0.2.0",
   "publisher": "bbenoist",
   "engines": {
-    "vscode": "^0.10.6"
+    "vscode": "^1.0.0"
   },
   "categories": [
     "Other"
@@ -68,12 +68,12 @@
     "postinstall": "node ./node_modules/vscode/bin/install"
   },
   "devDependencies": {
-    "typescript": "^1.7.5",
-    "vscode": "^0.11.0"
+    "typescript": "^1.8.10",
+    "vscode": "^0.11.12"
   },
   "dependencies": {
     "spawn-command": "0.0.2-1",
-    "tree-kill": "^1.0.0"
+    "tree-kill": "^1.1.0"
   },
   "quickTips": [
     { "tip": "Quickly execute shell commands by pressing F1 and entering `Shell: Run Command`",

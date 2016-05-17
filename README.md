@@ -48,6 +48,14 @@ See [`CONTRIBUTING.md`][contributing-md] for guidelines.
 * [GitHub repository][gh-repo]
 * [Gitter chatroom][gitter]
 
+## Other extensions you might like
+* [Vagrant][vagrant]
+* [Toggle Header / Source][togglehs]
+* [QuickTips][quicktips]
+* [Doxygen Language Support][doxygen]
+* [QML Language Support][qml]
+* [Nix Language Support][nix]
+
 ## Credits
 Icon made by Freepik from www.flaticon.com.
 
@@ -60,3 +68,9 @@ Icon made by Freepik from www.flaticon.com.
 [contributing-md]: https://github.com/bbenoist/vscode-shell/tree/master/CONTRIBUTING.md
 [license]: https://raw.githubusercontent.com/bbenoist/vscode-shell/master/LICENSE
 [vscode]: https://code.visualstudio.com/
+[vagrant]: https://marketplace.visualstudio.com/items?itemName=bbenoist.Vagrant
+[togglehs]: https://marketplace.visualstudio.com/items/bbenoist.togglehs
+[quicktips]: https://marketplace.visualstudio.com/items?itemName=bbenoist.QuickTips
+[doxygen]: https://marketplace.visualstudio.com/items?itemName=bbenoist.Doxygen
+[qml]: https://marketplace.visualstudio.com/items?itemName=bbenoist.QML
+[nix]: https://marketplace.visualstudio.com/items?itemName=bbenoist.Nix

@@ -22,22 +22,22 @@
     "theme": "light"
   },
   "activationEvents": [
-    "onCommand:extension.shellCMD",
-    "onCommand:extension.cwdShellCMD",
+    "onCommand:shell.runCommand",
+    "onCommand:shell.runCommandAtFileLocation",
     "onCommand:shell.showHistory",
-    "onCommand:extension.shellTerm",
-    "onCommand:extension.shellLog"
+    "onCommand:shell.terminateCommand",
+    "onCommand:shell.showCommandLog"
   ],
   "main": "./out/src/extension",
   "contributes": {
     "commands": [
       {
-        "command": "extension.shellCMD",
+        "command": "shell.runCommand",
         "title": "Run Command",
         "category": "Shell"
       },
       {
-        "command": "extension.cwdShellCMD",
+        "command": "shell.runCommandAtFileLocation",
         "title": "Run Command at Active File Location",
         "category": "Shell"
       },
@@ -47,23 +47,23 @@
         "category": "Shell"
       },
       {
-        "command": "extension.shellTerm",
+        "command": "shell.terminateCommand",
         "title": "Terminate Running Command",
         "category": "Shell"
       },
       {
-        "command": "extension.shellLog",
+        "command": "shell.showCommandLog",
         "title": "Show Command Log",
         "category": "Shell"
       }
     ],
     "keybindings": [
       {
-        "command": "extension.shellCMD",
+        "command": "shell.runCommand",
         "key": "Ctrl+R"
       },
       {
-        "command": "extension.cwdShellCMD",
+        "command": "shell.runCommandAtFileLocation",
         "key": "Ctrl+Shift+R"
       }
     ]

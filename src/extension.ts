@@ -97,12 +97,12 @@ export function activate(context: vscode.ExtensionContext) {
   commandOutput = vscode.window.createOutputChannel('Shell');
   context.subscriptions.push(commandOutput);
 
-  let shellCMD = vscode.commands.registerCommand('extension.shellCMD', () => {
+  let shellCMD = vscode.commands.registerCommand('shell.runCommand', () => {
     execShellCMD(vscode.workspace.rootPath);
   });
   context.subscriptions.push(shellCMD);
 
-  let cwdShellCMD = vscode.commands.registerTextEditorCommand('extension.cwdShellCMD', () => {
+  let cwdShellCMD = vscode.commands.registerTextEditorCommand('shell.runCommandAtFileLocation', () => {
     if (vscode.window.activeTextEditor.document.uri.scheme !== 'file') {
       vscode.window.showErrorMessage('Current document is not a local file.');
     } else {
@@ -114,7 +114,7 @@ export function activate(context: vscode.ExtensionContext) {
   let shellHistory = vscode.commands.registerCommand('shell.showHistory', showHistory)
   context.subscriptions.push(shellHistory);
 
-  let shellTerm = vscode.commands.registerCommand('extension.shellTerm', () => {
+  let shellTerm = vscode.commands.registerCommand('shell.terminateCommand', () => {
     if (process) {
       term();
     } else {
@@ -123,7 +123,7 @@ export function activate(context: vscode.ExtensionContext) {
   })
   context.subscriptions.push(shellTerm);
 
-  let shellOutput = vscode.commands.registerCommand('extension.shellLog', () => {
+  let shellOutput = vscode.commands.registerCommand('shell.showCommandLog', () => {
     commandOutput.show();
   })
   context.subscriptions.push(shellOutput);

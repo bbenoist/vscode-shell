@@ -24,6 +24,7 @@
   "activationEvents": [
     "onCommand:extension.shellCMD",
     "onCommand:extension.cwdShellCMD",
+    "onCommand:shell.showHistory",
     "onCommand:extension.shellTerm",
     "onCommand:extension.shellLog"
   ],
@@ -38,6 +39,11 @@
       {
         "command": "extension.cwdShellCMD",
         "title": "Run Command at Active File Location",
+        "category": "Shell"
+      },
+      {
+        "command": "shell.showHistory",
+        "title": "Show Command History",
         "category": "Shell"
       },
       {

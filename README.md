@@ -21,6 +21,11 @@ Press `F1` and select the command with title: `Shell: Run Command at Active File
 
 This will open a new input box where you will just have to type youd shell command and press `Enter`.
 
+### Show Command History
+Press `F1` and select the command with title: `Shell: Show Command History`.
+
+This will open a list of previous commands which can be re-executed when pressing `Enter`.
+
 ### Terminate Running Command
 Press `F1` and select the command with title: `Shell: Terminate Running command`.
 

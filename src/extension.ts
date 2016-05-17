@@ -5,9 +5,11 @@ import * as vscode from 'vscode';
 import * as path from 'path';
 var spawnCMD = require('spawn-command');
 var treeKill = require('tree-kill');
+import * as history from './history';
 
 var process = null;
 var commandOutput = null;
+var commandHistory : history.CommandHistory = null;
 
 function run(cmd:string, cwd:string) {
   return new Promise((accept, reject) => {
@@ -40,6 +42,20 @@ function term() {
   });
 }
 
+function exec(cmd:string, cwd:string) {
+  if (!cmd) { return; }
+  commandHistory.enqueue(cmd, cwd);
+  commandOutput.clear();
+  commandOutput.appendLine(`> Running command \`${cmd}\`...`)
+  run(cmd, cwd).then(() => {
+    commandOutput.appendLine(`> Command \`${cmd}\` ran successfully.`);
+  }).catch((reason) => {
+    commandOutput.appendLine(`> ERROR: ${reason}`);
+    vscode.window.showErrorMessage(reason, 'Show Output')
+      .then((action) => { commandOutput.show(); });
+  });
+}
+
 function execShellCMD(cwd:string) {
   if (process) {
     const msg = 'There is an active running shell command right now. Terminate it before executing another shell command.';
@@ -50,24 +66,34 @@ function execShellCMD(cwd:string) {
         }
       });
   } else {
-    vscode.window.showInputBox({placeHolder: 'Type your shell command here.'}).then(
-      (cmd) => {
-        if (!cmd) { return; }
-        commandOutput.clear();
-        commandOutput.appendLine(`> Running command \`${cmd}\`...`)
-        run(cmd, cwd).then(() => {
-          commandOutput.appendLine(`> Command ${cmd} ran successfully.`);
-        }).catch((reason) => {
-          commandOutput.appendLine(`> ERROR: ${reason}`);
-          vscode.window.showErrorMessage(reason, 'Show Output')
-            .then((action) => { commandOutput.show(); });
-        });
-      }
-    );
+    var lastCmd = commandHistory.last();
+    var options = {
+      placeHolder: 'Type your shell command here.',
+      value: lastCmd ? lastCmd.cmd : undefined
+    };
+    vscode.window.showInputBox(options).then((cmd) => {
+      exec(cmd, cwd);
+    });
   }
 }
 
+function showHistory() {
+  return new Promise((accept, reject) => {
+    let items: vscode.QuickPickItem[] = commandHistory.commands().map((cmd) => {
+      return { label: cmd.cmd, detail: cmd.cwd, cmd: cmd, description: undefined };
+    });
+    vscode.window.showQuickPick(items).then((value:any) => {
+      if (value) {
+        exec(value.cmd.cmd, value.cmd.cwd);
+      }
+    })
+  });
+}
+
 export function activate(context: vscode.ExtensionContext) {
+  commandHistory = new history.CommandHistory();
+  context.subscriptions.push(commandHistory);
+
   commandOutput = vscode.window.createOutputChannel('Shell');
   context.subscriptions.push(commandOutput);
 
@@ -84,6 +110,9 @@ export function activate(context: vscode.ExtensionContext) {
     }
   });
   context.subscriptions.push(cwdShellCMD);
+
+  let shellHistory = vscode.commands.registerCommand('shell.showHistory', showHistory)
+  context.subscriptions.push(shellHistory);
 
   let shellTerm = vscode.commands.registerCommand('extension.shellTerm', () => {
     if (process) {

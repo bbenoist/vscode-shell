@@ -1,95 +1,114 @@
 {
-  "name": "shell",
-  "displayName": "Shell",
-  "description": "Execute shell commands from VS Code",
-  "version": "0.3.0",
-  "publisher": "bbenoist",
-  "engines": {
-    "vscode": "^1.0.0"
-  },
-  "categories": [
-    "Other"
-  ],
-  "icon": "images/icon.png",
-  "license": "MIT",
-  "bugs": { "url": "https://github.com/bbenoist/vscode-shell/issues" },
-  "homepage": "https://github.com/bbenoist/vscode-shell/blob/master/README.md",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bbenoist/vscode-shell.git"
-  },
-  "galleryBanner": {
-    "theme": "light"
-  },
-  "activationEvents": [
-    "onCommand:shell.runCommand",
-    "onCommand:shell.runCommandAtFileLocation",
-    "onCommand:shell.showHistory",
-    "onCommand:shell.terminateCommand",
-    "onCommand:shell.showCommandLog"
-  ],
-  "main": "./out/src/extension",
-  "contributes": {
-    "commands": [
-      {
-        "command": "shell.runCommand",
-        "title": "Run Command",
-        "category": "Shell"
-      },
-      {
-        "command": "shell.runCommandAtFileLocation",
-        "title": "Run Command at Active File Location",
-        "category": "Shell"
-      },
-      {
-        "command": "shell.showHistory",
-        "title": "Show Command History",
-        "category": "Shell"
-      },
-      {
-        "command": "shell.terminateCommand",
-        "title": "Terminate Running Command",
-        "category": "Shell"
-      },
-      {
-        "command": "shell.showCommandLog",
-        "title": "Show Command Log",
-        "category": "Shell"
-      }
-    ],
-    "keybindings": [
-      {
-        "command": "shell.runCommand",
-        "key": "Ctrl+R"
-      },
-      {
-        "command": "shell.runCommandAtFileLocation",
-        "key": "Ctrl+Shift+R"
-      }
-    ]
-  },
-  "scripts": {
-    "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
-    "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install"
-  },
-  "devDependencies": {
-    "typescript": "^1.8.10",
-    "vscode": "^0.11.12"
-  },
-  "dependencies": {
-    "spawn-command": "0.0.2-1",
-    "tree-kill": "^1.1.0"
-  },
-  "quickTips": [
-    { "tip": "Quickly execute shell commands by pressing F1 and entering `Shell: Run Command`",
-      "url": "https://marketplace.visualstudio.com/items?itemName=bbenoist.shell#run-command" },
-    { "tip": "Print the shell command output by pressing F1 and entering `Shell: Show Command Log`",
-      "url": "https://marketplace.visualstudio.com/items?itemName=bbenoist.shell#show-command-log" },
-    { "tip": "Terminate running shell command by pressing F1 and entering `Shell: Terminate Running Command`",
-      "url": "https://marketplace.visualstudio.com/items?itemName=bbenoist.shell#terminate-running-command" },
-    { "tip": "With the bbenoist.shell extension, you can run any executable available in the PATH environment variable" },
-    { "tip": "With the bbenoist.shell extension, you can chain shell commands with &&" },
-    { "tip": "Ignore erroneous shell commands by adding `;exit 0` to them" }
-  ]
+	"name": "shell",
+	"displayName": "Shell",
+	"description": "Execute shell commands from VS Code",
+	"version": "0.3.0",
+	"publisher": "bbenoist",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"icon": "images/icon.png",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/bbenoist/vscode-shell/issues"
+	},
+	"homepage": "https://github.com/bbenoist/vscode-shell/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/bbenoist/vscode-shell.git"
+	},
+	"galleryBanner": {
+		"theme": "light"
+	},
+	"activationEvents": [
+		"onCommand:shell.runCommand",
+		"onCommand:shell.runCommandAtFileLocation",
+		"onCommand:shell.showHistory",
+		"onCommand:shell.terminateCommand",
+		"onCommand:shell.showCommandLog"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "shell.runCommand",
+				"title": "Run Command",
+				"category": "Shell"
+			},
+			{
+				"command": "shell.runCommandAtFileLocation",
+				"title": "Run Command at Active File Location",
+				"category": "Shell"
+			},
+			{
+				"command": "shell.showHistory",
+				"title": "Show Command History",
+				"category": "Shell"
+			},
+			{
+				"command": "shell.terminateCommand",
+				"title": "Terminate Running Command",
+				"category": "Shell"
+			},
+			{
+				"command": "shell.showCommandLog",
+				"title": "Show Command Log",
+				"category": "Shell"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "shell.runCommand",
+				"key": "Ctrl+R"
+			},
+			{
+				"command": "shell.runCommandAtFileLocation",
+				"key": "Ctrl+Shift+R"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"typescript": "^1.8.10",
+		"vscode": "^0.11.12"
+	},
+	"dependencies": {
+		"spawn-command": "0.0.2-1",
+		"tree-kill": "^1.1.0"
+	},
+	"quickTips": [
+		{
+			"tip": "Quickly execute shell commands by pressing F1 and entering `Shell: Run Command`",
+			"url": "https://marketplace.visualstudio.com/items?itemName=bbenoist.shell#run-command"
+		},
+		{
+			"tip": "Print the shell command output by pressing F1 and entering `Shell: Show Command Log`",
+			"url": "https://marketplace.visualstudio.com/items?itemName=bbenoist.shell#show-command-log"
+		},
+		{
+			"tip": "Terminate running shell command by pressing F1 and entering `Shell: Terminate Running Command`",
+			"url": "https://marketplace.visualstudio.com/items?itemName=bbenoist.shell#terminate-running-command"
+		},
+		{
+			"tip": "With the bbenoist.shell extension, you can run any executable available in the PATH environment variable"
+		},
+		{
+			"tip": "With the bbenoist.shell extension, you can chain shell commands with &&"
+		},
+		{
+			"tip": "Ignore erroneous shell commands by adding `;exit 0` to them"
+		}
+	],
+	"__metadata": {
+		"id": "7c1ac6ae-5273-470b-8f8f-c8adc23c6538",
+		"publisherDisplayName": "Baptist BENOIST",
+		"publisherId": "787ce942-60d4-48d6-b14e-25bdc72bd145"
+	}
 }

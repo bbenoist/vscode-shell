@@ -56,7 +56,7 @@ function exec(cmd:string, cwd:string) {
   });
 }
 
-function execShellCMD(cwd:string) {
+function execShellCMD(cwd:string,cmd: string = undefined) {
   if (process) {
     const msg = 'There is an active running shell command right now. Terminate it before executing another shell command.';
     vscode.window.showWarningMessage(msg, 'Terminate')
@@ -71,9 +71,13 @@ function execShellCMD(cwd:string) {
       placeHolder: 'Type your shell command here.',
       value: lastCmd ? lastCmd.cmd : undefined
     };
-    vscode.window.showInputBox(options).then((cmd) => {
+    if(cmd === undefined) {
+      vscode.window.showInputBox(options).then((cmd) => {
+        exec(cmd, cwd);
+      });
+    } else {
       exec(cmd, cwd);
-    });
+    }
   }
 }
 
@@ -97,8 +101,8 @@ export function activate(context: vscode.ExtensionContext) {
   commandOutput = vscode.window.createOutputChannel('Shell');
   context.subscriptions.push(commandOutput);
 
-  let shellCMD = vscode.commands.registerCommand('shell.runCommand', () => {
-    execShellCMD(vscode.workspace.rootPath);
+  let shellCMD = vscode.commands.registerCommand('shell.runCommand', (cmd: string = undefined) => {
+    execShellCMD(vscode.workspace.rootPath,cmd);
   });
   context.subscriptions.push(shellCMD);
 
